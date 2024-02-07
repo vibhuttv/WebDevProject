@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Vibhu -->
+    <div class="app-overlay">
+      <div class="app-header">
+        <h1>Expense Tracker</h1>
+      </div>
+
+      <main class="app-content">
+        <section class="balance-summary">
+          <div class="balance-item total-balance">
+            <h5>Total Balance</h5>
+            <span id="totalBalance">₹0.00</span>
+          </div>
+          <div class="balance-item income-amount">
+            <h5>Income</h5>
+            <span id="totalIncome">₹0.00</span>
+          </div>
+          <div class="balance-item expense-amount">
+            <h5>Expense</h5>
+            <span id="totalExpense">₹0.00</span>
+          </div>
+        </section>
+
+        <section class="transaction-section">
+          <h3>Add Transaction</h3>
+          <form id="addTransactionForm">
+            <div class="form-group">
+              <label for="transactionType">Type</label>
+              <select name="type" id="transactionType" required>
+                <option value="income">Income</option>                                             <!-- Vibhu -->
+                <option value="expense">Expense</option>                                          
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="transactionName">Name</label>
+              <input type="text" id="transactionName" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="transactionAmount">Amount</label>
+              <input
+                type="number"
+                id="transactionAmount"
+                name="amount"
+                required        
+                min="1"
+                step="1"
+              />
+            </div>
+            <div class="form-group">
+              <label for="transactionDate">Date</label>
+              <input type="date" id="transactionDate" name="date" required />
+            </div>
+            <button type="submit" class="submit-btn">Add</button>
+          </form>                                                                                         <!-- Vibhu -->
+        </section>                                                                                                                  
+
+        <section class="transaction-history">
+          <h3>Transactions</h3>
+          <ul id="transactionsList"></ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

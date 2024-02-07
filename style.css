@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+body,
+html {
+  font-family: "Poppins", sans-serif;
+  background-color: #ecf0f1;
+  color: #333;
+  margin: 0;                
+  padding: 0;
+}
+                                                                                                                                            /* Vibhu  */
+.app-header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #27ae60;
+  color: #fff;
+  padding: 20px 0;                                                                                                      /* Vibhu  */
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.app-content {
+  padding-top: 80px; /* Adjust based on the actual height of your header */
+  width: 95%;                                                                                                         /* Vibhu  */
+  max-width: 800px;
+  margin: 40px auto; /* Increased top margin for visual separation */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px; /* Increased radius for softer corners */
+  position: relative;
+}
+
+.balance-summary {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px; /* Increased margin for better separation */
+  text-align: center; /* Center-align the text for better readability */
+}
+
+.balance-item {
+  padding: 15px 20px; /* Increased padding for more space */
+  border-radius: 8px; /* Softer corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Keep the transition for interactive feedback */
+  width: 28%; /* Ensure uniform width for all items */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.balance-item:hover {
+  transform: translateY(-5px); /* Subtle lift effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Increased margin for better spacing */
+}
+
+label {
+  display: block;
+  margin-bottom: 8px; /* Slightly increased space between label and input */
+  font-weight: 500; /* Slightly bolder font for labels */
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px; /* Slightly larger padding for larger click area */
+  border-radius: 8px;
+  border: 1px solid #bdc3c7; /* Lighter border color for softer appearance */
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Refined inner shadow */
+  font-size: 16px; /* Slightly larger font size for better readability */
+}
+
+.submit-btn {
+  background-color: #2ecc71; /* Softer green */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px; /* Uniform font size with input fields */
+  font-weight: 600; /* Bolder font weight for button text */
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #27ae60; /* Darker shade on hover for interactive feedback */
+}
+
+.transaction-history ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.transaction-history li {
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.transaction-history li:hover {
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+}
+
+.transaction-history .expense,
+.transaction-history .income {
+  font-weight: 600; /* Bolder font for emphasis */
+}
+
+.transaction-history .expense {
+  color: #e74c3c; /* Softer red for expenses */
+}
+
+.transaction-history .income {
+  color: #2ecc71; /* Consistent green for incomes */
+}
+.transaction-section {
+  margin-top: 40px; /* Increased top margin for visual separation */
+  box-sizing: border-box;
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .balance-summary {
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow items to wrap as needed */
+  }
+
+  .balance-item {
+    margin-bottom: 20px; /* Add some bottom margin for when items wrap */
+    width: auto; /* Allow items to automatically adjust their width */
+  }
+
+  .form-group,
+  .submit-btn {
+    max-width: 50%; /* Adjust form width for tablet screens */
+    margin: 0 auto; /* Center form elements */
+  }
+
+  .transaction-history li {
+    flex-direction: row; /* Ensure list items are flex-row */
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .app-header {
+    padding: 10px 0; /* Reduce padding on smaller screens */
+  }
+
+  .balance-item,
+  .form-group,
+  .submit-btn {
+    width: 100%; /* Full width for smaller screens */
+  }
+
+  .transaction-history li {
+    flex-direction: column; /* Stack elements vertically on small screens */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .transaction-history li > * {
+    margin-bottom: 10px; /* Add bottom margin to elements inside list items */
+  }
+
+  .form-group,
+  .submit-btn {
+    max-width: none; /* Allow form elements to take full width */
+  }
+}
+
+/* Very small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .app-content {
+    padding: 15px; /* Reduce padding for very small screens */
+    margin: 20px 10px; /* Adjust margin to ensure some space around the content */
+  }
+
+  label {
+    margin-bottom: 8px; /* Ensure labels are not too far from their inputs */
+  }
+
+  input,
+  select,
+  .submit-btn {
+    padding: 12px 10px; /* Adjust padding for better handling on small screens */
+  }
+
+  .transaction-history li {
+    padding: 8px; /* Reduce padding inside transaction list items */
+  }
+}
